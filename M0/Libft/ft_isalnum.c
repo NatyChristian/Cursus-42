@@ -13,5 +13,4 @@ int	ft_isalnum(char c)
     printf("Z: %d\n", ft_isalnum('Z'));
     printf("!: %d\n", ft_isalnum('!'));
     return (0);
-}
-*/
+}*/
