@@ -1,19 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/27 11:20:37 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/27 15:09:05 by jmbolana         ###   ########.fr       */
+/*   Created: 2026/01/27 14:48:59 by jmbolana          #+#    #+#             */
+/*   Updated: 2026/01/27 15:08:38 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
+/*#include <stdio.h>
 
-size_t		ft_strlen(const char *str);
-size_t		ft_strlcat(char *dest, const char *src, size_t size);
-void		*ft_memchr(const void	*s, int c, size_t n);
-int			ft_memcmp(const void *s1, const void *s2, size_t n);
-char		*ft_strchr(const char *s, int c);
+int	main(void)
+{
+	char *s = "MBOLANANTENAINA";
+	char c = 'I';
+	char *d = ft_strchr(s, c);
+
+	printf("%p\n",d);
+	printf("%p",s + 12);
+	return (0);
+}*/
+
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
+
+	i = 0;
+	if (c == 0)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i++;
+	}
+	return (NULL);
+}
