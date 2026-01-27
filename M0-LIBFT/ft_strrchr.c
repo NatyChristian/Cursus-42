@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 14:48:59 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/27 15:24:41 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/01/27 15:28:11 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 /*#include <stdio.h>
 
 int	main(void)
 {
 	char *s = "MBOLANANTENAINA";
-	char c = 'I';
-	char *d = ft_strchr(s, c);
+	char c = 'A';
+	char *d = ft_strrchr(s, c);
 
 	printf("%p\n",d);
-	printf("%p",s + 12);
+	printf("%p",s + 14);
 	return (0);
 }*/
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
 	int	len;
 
-	i = 0;
 	len = ft_strlen(s);
-	while (i <= len)
+	while (len >= 0)
 	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-		i++;
+		if (s[len] == (char)c)
+			return ((char *)s + len);
+		len--;
 	}
 	return (NULL);
 }
