@@ -6,7 +6,7 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 16:35:49 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/31 19:27:52 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/01 14:10:52 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,25 +76,25 @@ char	**ft_split(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	j;
-	unsigned int	wrds;
+	unsigned int	len;
 	char			**tab;
 
 	if (!s)
 		return (NULL);
-	wrds = cnt_wrds(s, c);
-	tab = (char **)ft_calloc(sizeof(char *), wrds + 1);
+	tab = (char **)ft_calloc(sizeof(char *), cnt_wrds(s, c) + 1);
 	if (!tab)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (j < wrds)
+	while (j < cnt_wrds(s, c))
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		tab[j] = ft_substr(s, i, mem_len(&s[i], c));
+		len = mem_len(&s[i], c);
+		tab[j] = ft_substr(s, i, len);
 		if (!tab[j])
 			return (free_tab(tab, j - 1));
-		i += mem_len(&s[i], c);
+		i += len;
 		j++;
 	}
 	return (tab);
@@ -104,7 +104,7 @@ static char	**free_tab(char **s, int n)
 {
 	while (n >= 0)
 	{
-		free(s[n]);
+		free(s[n - 1]);
 		n--;
 	}
 	free(s);

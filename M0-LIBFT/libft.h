@@ -6,7 +6,7 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 08:02:19 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/31 19:23:27 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/01 13:11:20 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ size_t	ft_strlcpy(char *destination, const char *source, size_t size);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strtrim(char const *s1, char const *set);

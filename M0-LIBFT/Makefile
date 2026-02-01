@@ -6,7 +6,7 @@
 #    By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/01 11:07:57 by jmbolana          #+#    #+#              #
-#    Updated: 2026/02/01 11:08:23 by jmbolana         ###   ########.fr        #
+#    Updated: 2026/02/01 13:10:52 by jmbolana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ SRC = ft_atoi.c\
       ft_strtrim.c\
       ft_substr.c\
       ft_tolower.c\
-      ft_toupper.c
+      ft_toupper.c\
+      ft_strnstr.c
 
 OBJ = $(SRC:.c=.o)
 HEADERS = libft.h

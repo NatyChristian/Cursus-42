@@ -6,76 +6,51 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:49:26 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/31 08:47:14 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/01 14:09:49 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /*#include <stdio.h>*/
 
-static	unsigned int	countset(char const *s1, char const *set);
-static	unsigned int	isin(char const ch, char const *s);
+static unsigned int	isin(char const ch, char const *s);
 
 /*int	main(void)
 {
-	char 	*s1 = "MBOLANANTENAINA";
-	char	*set = "AI";
-	char	*s = ft_strtrim(s1, set);
+	char	*s1;
+	char	*set;
+	char	*s;
+
+	s1 = "MBOLANANTENAINA";
+	set = "MBAN";
+	s = ft_strtrim(s1, set);
 	printf("%s\n", s);
 	return (0);
 }
 */
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	setcount;
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	len;
-	char			*newstring;
+	char			*out;
+	unsigned int	start;
+	unsigned int	end;
 
-	setcount = countset(s1, set);
-	len = (unsigned int)ft_strlen(s1) - setcount;
-	newstring = malloc(sizeof(char) * (len + 1));
-	if (!newstring)
+	if (!s1 || !set)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[i] != '\0')
-	{
-		if (!isin(s1[i], set))
-		{
-			newstring[j] = s1[i];
-			j++;
-		}
-		i++;
-	}
-	newstring[j] = '\0';
-	return (newstring);
+	start = 0;
+	while (isin(s1[start], set) && s1[start])
+		start++;
+	end = ft_strlen(s1);
+	while (isin(s1[end - 1], set) && end > start)
+		end--;
+	out = malloc(sizeof(char) * (start - end + 1));
+	if (!out)
+		return (NULL);
+	ft_strlcpy(out, &s1[start], end - start + 1);
+	return (out);
 }
 
-static	unsigned int	countset(char const *s1, char const *set)
-{
-	unsigned int	setcount;
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	setcount = 0;
-	while (s1[i] != '\0')
-	{
-		j = 0;
-		while (set[j] != '\0')
-		{
-			if (s1[i] == set[j])
-				setcount++;
-			j++;
-		}
-		i++;
-	}
-	return (setcount);
-}
-
-static	unsigned int	isin(char const ch, char const *s)
+static unsigned int	isin(char const ch, char const *s)
 {
 	int	i;
 
