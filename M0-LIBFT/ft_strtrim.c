@@ -6,17 +6,17 @@
 /*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:49:26 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/04 12:14:40 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:16:19 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
+/*#include <stdio.h>
+*/
 static unsigned int	isin(char const ch, char const *s);
 
-int	main(void)
+/*int	main(void)
 {
 	char	*s1;
 	char	*set;
@@ -28,7 +28,7 @@ int	main(void)
 	printf("%s\n", s);
 	return (0);
 }
-
+*/
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*out;

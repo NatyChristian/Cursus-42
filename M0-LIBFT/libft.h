@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 08:02:19 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/01 13:11:20 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/04 13:59:40 by Jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <limits.h>
 
 int		ft_atoi(const char *nptr);
 int		ft_isalnum(int c);
@@ -40,4 +41,5 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *str, int ch, size_t n);
+char	*ft_itoa(int i);
 char	**ft_split(char const *s, char c);

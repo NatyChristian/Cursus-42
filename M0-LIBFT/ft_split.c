@@ -6,38 +6,38 @@
 /*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 10:18:08 by Jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/04 12:06:31 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/04 13:09:58 by Jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-/*
-#include    <stdio.h>*/
 
+/*#include    <stdio.h>
+*/
 size_t	count_wrds(char const *s, char c);
 size_t	cnt_tok(char const *s, char c);
 void	*free_mem(char **s, int size);
-
-/*int main(void)
+/*
+int main(void)
 {
 	char	**str;
 	char	*s;
 	char	c;
 	size_t	i;
 
-	s = "----MBOLANANTENAINA--Jean_PHILIPPE--CHRISTIAN----";
+	s = "MBOLANANTENAINA--Jean_PHILIPPE--CHRISTIAN----";
 	c = '-';
 	str = ft_split(s,c);
 	i = 0;
 	while (i < count_wrds(s,c))
 	{
-		printf("[%lu] : %s\n", i + 1, str[i]);
+		printf("[%zu] : %s\n", i + 1, str[i]);
 		i++;
 	}
 	return (0);
-}
-*/
+}*/
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	wrds;
@@ -48,7 +48,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	wrds = count_wrds(s, c);
-	tab = malloc(sizeof(char *) * (wrds + 1));
+	tab = ft_calloc(sizeof(char *), wrds + 1);
 	if (!tab)
 		return (NULL);
 	i = 0;
@@ -63,27 +63,27 @@ char	**ft_split(char const *s, char c)
 		i++;
 		j += cnt_tok(&s[j], c);
 	}
-	tab[i] = NULL;
 	return (tab);
 }
 
 size_t	count_wrds(char const *s, char c)
 {
-	unsigned int	i;
-	size_t			count;
+	size_t	count;
+	int		trigger;
 
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
 	count = 0;
-	while (s[i])
+	trigger = 0;
+	while (*s)
 	{
-		if (i > 0 && s[i] == c && s[i - 1] != c)
+		if (*s != c && trigger == 0)
+		{
+			trigger = 1;
 			count++;
-		i++;
+		}
+		else if (*s == c)
+			trigger = 0;
+		s++;
 	}
-	if (i > 0 && s[i - 1] != c)
-		count++;
 	return (count);
 }
 
@@ -111,5 +111,6 @@ void	*free_mem(char **s, int size)
 	i = 0;
 	while (i < size)
 		free(s[i++]);
+	free(s);
 	return (NULL);
 }
