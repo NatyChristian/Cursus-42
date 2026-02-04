@@ -6,7 +6,7 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:32:40 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/31 08:41:52 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:08:04 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	j;
 
 	len = ft_strlen(s1) + ft_strlen(s2);
-	ptr = malloc(sizeof(char) *(len + 1));
+	ptr = ft_calloc(sizeof(char), len + 1);
 	if (!ptr)
 		return (NULL);
 	i = 0;
@@ -47,6 +47,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		ptr[j++] = s2[i++];
 	}
-	ptr[j] = '\0';
 	return (ptr);
 }

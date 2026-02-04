@@ -6,7 +6,7 @@
 /*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 10:18:08 by Jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/04 10:18:14 by Jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:06:31 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	*free_mem(char **s, int size);
 	char	c;
 	size_t	i;
 
-	s = "";
-	c = 'z';
+	s = "----MBOLANANTENAINA--Jean_PHILIPPE--CHRISTIAN----";
+	c = '-';
 	str = ft_split(s,c);
 	i = 0;
 	while (i < count_wrds(s,c))

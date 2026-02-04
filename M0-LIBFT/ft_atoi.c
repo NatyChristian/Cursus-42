@@ -6,10 +6,9 @@
 /*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 10:15:50 by Jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/04 10:45:18 by Jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:01:17 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 /*#include <stdio.h>

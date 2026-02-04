@@ -6,7 +6,7 @@
 /*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:18:58 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/01/31 19:28:19 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:04:53 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (len > s_len - start)
 		len = (unsigned int)s_len - start;
 	i = 0;
-	ptr = (char *)malloc(sizeof(char) * (len + 1));
+	ptr = (char *)ft_calloc(sizeof(char), len + 1);
 	if (!ptr)
 		return (NULL);
 	while (s[start] != '\0' && i < len)
 		ptr[i++] = s[start++];
-	ptr[i] = '\0';
 	return (ptr);
 }

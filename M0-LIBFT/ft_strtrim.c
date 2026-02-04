@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 10:49:26 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/01 14:09:49 by jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/04 12:14:40 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*#include <stdio.h>*/
+#include <stdio.h>
 
 static unsigned int	isin(char const ch, char const *s);
 
-/*int	main(void)
+int	main(void)
 {
 	char	*s1;
 	char	*set;
@@ -28,7 +28,7 @@ static unsigned int	isin(char const ch, char const *s);
 	printf("%s\n", s);
 	return (0);
 }
-*/
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*out;
@@ -41,9 +41,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (isin(s1[start], set) && s1[start])
 		start++;
 	end = ft_strlen(s1);
-	while (isin(s1[end - 1], set) && end > start)
+	while (isin(s1[end - 1], set)
+		&& end > start
+		&& end > 0)
 		end--;
-	out = malloc(sizeof(char) * (start - end + 1));
+	out = ft_calloc(sizeof(char), end - start + 1);
 	if (!out)
 		return (NULL);
 	ft_strlcpy(out, &s1[start], end - start + 1);
