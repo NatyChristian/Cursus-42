@@ -6,7 +6,7 @@
 /*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 08:02:19 by jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/04 13:59:40 by Jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/04 14:38:08 by Jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *str, int ch, size_t n);
 char	*ft_itoa(int i);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
