@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/04 10:18:08 by Jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/04 13:09:58 by Jmbolana         ###   ########.fr       */
+/*   Updated: 2026/02/07 23:31:43 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,6 @@ size_t	cnt_tok(char const *s, char c)
 	size_t	cnt;
 
 	i = 0;
-	while (s[i] == c)
-		i++;
 	cnt = 0;
 	while (s[i] && s[i] != c)
 	{
