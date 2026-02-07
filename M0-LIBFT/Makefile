@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jmbolana <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: jmbolana <jmbolana@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/01 11:07:57 by jmbolana          #+#    #+#              #
-#    Updated: 2026/02/07 08:29:28 by jmbolana         ###   ########.fr        #
+#    Updated: 2026/02/07 15:23:18 by jmbolana         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRC = ft_atoi.c\
       ft_isdigit.c\
       ft_isprint.c\
       ft_itoa.c\
+	  ft_lstadd_front\
+      ft_lstnew.c\
       ft_memchr.c\
       ft_memcmp.c\
       ft_memcpy.c\
